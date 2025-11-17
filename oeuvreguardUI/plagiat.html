@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>🔎 Vérification Plagiat</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    
+    #loading {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔎 Vérification de plagiat</h1>
+
+  <form id="plagiatForm" action="http://localhost:8000/plagiat" method="post" enctype="multipart/form-data" class="form-card">
+    <label for="texte">Texte à vérifier :</label><br>
+    <textarea id="texte" name="texte" rows="8" cols="50" placeholder="Collez votre texte ici..."></textarea><br><br>
+
+    <label for="fichier">Ou uploader un fichier :</label>
+    <input type="file" id="fichier" name="fichier"><br><br>
+
+    <button type="submit">Analyser</button>
+  </form>
+
+  <div id="loading" style="display:none;">⏳ Analyse en cours...</div>
+
+<div id="result"></div>
+
+<!-- Le bouton sera injecté ici -->
+<div id="download-btn-container"></div>
+
+
+  <p><a href="upload.html" class="link">⬅ Retour à l’upload</a></p>
+
+  <script>
+    document.querySelector("#plagiatForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+    
+        const formData = new FormData(e.target);
+        const loading = document.getElementById("loading");
+        const result = document.getElementById("result");
+        const btnContainer = document.getElementById("download-btn-container");
+    
+        loading.style.display = "block";
+        result.innerHTML = "";
+        btnContainer.innerHTML = "";  // nettoyer l'ancien bouton
+    
+        try {
+            let response = await fetch("http://localhost:8000/plagiat", {
+                method: "POST",
+                body: formData
+            });
+    
+            if (!response.ok) {
+                throw new Error(`Erreur serveur: ${response.status}`);
+            }
+    
+            let data = await response.json();
+            console.log(data);
+    
+            if (data.rapport_pdf) {
+                // ⚡ Utilisation directe du chemin renvoyé par l'API
+                const downloadUrl = `http://localhost:8000${data.rapport_pdf}`;
+    
+                const btn = document.createElement("a");
+                btn.href = downloadUrl;
+                btn.download = `${data.analyse_id}.pdf`;
+                btn.textContent = "📄 Télécharger le rapport PDF";
+                btn.style.display = "inline-block";
+                btn.style.padding = "10px 20px";
+                btn.style.background = "#0078d7";
+                btn.style.color = "white";
+                btn.style.borderRadius = "5px";
+                btn.style.textDecoration = "none";
+                btn.style.fontWeight = "bold";
+                btn.style.marginTop = "20px";
+    
+                btnContainer.appendChild(btn);
+            } else {
+                result.innerHTML = "<p>Aucun rapport PDF généré.</p>";
+            }
+    
+        } catch (error) {
+            console.error("Erreur lors de l'analyse :", error);
+            result.innerHTML = "<p style='color:red;'>❌ Une erreur est survenue. Veuillez réessayer.</p>";
+        } finally {
+            loading.style.display = "none";
+        }
+    });
+    </script>
+    
+    
+</body>
+</html>

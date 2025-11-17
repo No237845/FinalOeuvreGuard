@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Uploader une œuvre</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>Uploader une œuvre</h1>
+
+  <form id="uploadForm" enctype="multipart/form-data" class="form-card">
+    <label for="titre">Titre :</label>
+    <input type="text" id="titre" name="titre" required><br><br>
+
+    <label for="auteur">Auteur :</label>
+    <input type="text" id="auteur" name="auteur" required><br><br>
+
+    <label for="genre">Genre :</label>
+    <input type="text" id="genre" name="genre" required><br><br>
+
+    <label for="langue">Langue :</label>
+    <input type="text" id="langue" name="langue" required><br><br>
+
+    <label for="fichier">Fichier :</label>
+    <input type="file" id="fichier" name="fichier" required><br><br>
+
+    <button type="submit">Uploader</button>
+  </form>
+
+  <div id="result" style="margin-top:20px;"></div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      resultDiv.innerHTML = "<p>⏳ Upload en cours...</p>";
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/upload", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          resultDiv.innerHTML = `<p style="color:red;">Erreur : ${data.detail}</p>`;
+          return;
+        }
+
+        resultDiv.innerHTML = `
+          <p><strong>Œuvre enregistrée :</strong> ${data.oeuvre}</p>
+          <p><strong>Empreinte :</strong> ${data.empreinte_hash}</p>
+          <p>
+            <a href="${data.certificat_url}" target="_blank" style="color:blue;">
+              📄 Télécharger le certificat
+            </a>
+          </p>
+        `;
+      } catch (err) {
+        resultDiv.innerHTML = `<p style="color:red;">Erreur : ${err}</p>`;
+      }
+    });
+  </script>
+
+</body>
+</html>

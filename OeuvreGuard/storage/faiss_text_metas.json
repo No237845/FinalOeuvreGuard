@@ -1,0 +1,124 @@
+[
+  {
+    "oeuvre_id": "BF-1c4ed01a",
+    "type": "texte",
+    "path": "data_to_ingest\\Activité 3_structure algébrique.pdf"
+  },
+  {
+    "oeuvre_id": "BF-54759d17",
+    "type": "texte",
+    "path": "data_to_ingest\\activité logique1.pdf"
+  },
+  {
+    "oeuvre_id": "BF-06ebb731",
+    "type": "texte",
+    "path": "data_to_ingest\\chapitre 1.pdf"
+  },
+  {
+    "oeuvre_id": "BF-3ce80495",
+    "type": "texte",
+    "path": "data_to_ingest\\chapitre 2.pdf"
+  },
+  {
+    "oeuvre_id": "BF-66ce07cb",
+    "type": "texte",
+    "path": "data_to_ingest\\chapitre 3.pdf"
+  },
+  {
+    "oeuvre_id": "BF-0df5d1e0",
+    "type": "texte",
+    "path": "data_to_ingest\\chapitre x.pdf"
+  },
+  {
+    "oeuvre_id": "BF-0fd1336f",
+    "type": "texte",
+    "path": "data_to_ingest\\Cours Entrepreunariat numerique et insertion professionnelle - UV-BF.pdf"
+  },
+  {
+    "oeuvre_id": "BF-27876a2a",
+    "type": "texte",
+    "path": "data_to_ingest\\file.pdf"
+  },
+  {
+    "oeuvre_id": "BF-5070ff70",
+    "type": "texte",
+    "path": "data_to_ingest\\TD.pdf"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-153929",
+    "titre": "Designe",
+    "auteur": "Innocent",
+    "genre": "Roman",
+    "langue": "français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-154548",
+    "titre": "Epreuve",
+    "auteur": "Inno",
+    "genre": "Ecrit",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-154827",
+    "titre": "Livre",
+    "auteur": "Mamadou Drissa",
+    "genre": "Humour",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-155601",
+    "titre": "Oeuvre",
+    "auteur": "Basside DA",
+    "genre": "Culture Moaga",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-155705",
+    "titre": "Oeuvre",
+    "auteur": "Basside DA",
+    "genre": "Culture Moaga",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-163411",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Music",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-163603",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Music",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-195854",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Music",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-200010",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Music",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-200501",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Music",
+    "langue": "Français"
+  },
+  {
+    "oeuvre_id": "BOOK-2025-211424",
+    "titre": "Boussa",
+    "auteur": "Kabore ",
+    "genre": "Oeuvre",
+    "langue": "Français"
+  }
+]

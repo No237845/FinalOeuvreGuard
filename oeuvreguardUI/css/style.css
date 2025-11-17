@@ -1,0 +1,158 @@
+/* Couleurs BBDA */
+:root {
+    --bleu-fonce: #002147;
+    --vert-bbda: #00C853;
+    --gris-clair: #f5f5f5;
+    --texte: #333;
+  }
+  
+  /* Fond global */
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--gris-clair);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Animation d’entrée */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  h1 {
+    margin: 40px 0 20px;
+    font-size: 2.8em;
+    color: var(--bleu-fonce);
+    animation: slideIn 1.2s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
+  /* Cartes d’accueil */
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 70px;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background: white;
+    padding: 30px;
+    width: 340px;               /* largeur augmentée */
+    min-height: 240px;          /* hauteur flexible pour texte */
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--bleu-fonce);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid var(--vert-bbda);
+    display: flex;
+    flex-direction: column;     /* icône + titre + texte */
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .card .icon {
+    font-size: 3em;             /* icône plus grande */
+    margin-bottom: 15px;
+  }
+  
+  .card h2 {
+    font-size: 1.4em;
+    margin: 10px 0;
+    color: var(--bleu-fonce);
+  }
+  
+  .card p {
+    font-size: 1em;
+    color: var(--texte);
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  
+  .card:hover {
+    transform: scale(1.07);     /* zoom léger */
+    box-shadow: 0 12px 22px rgba(0,0,0,0.18);
+  }
+  
+  /* Formulaire centré */
+.form-card {
+    background: white;
+    padding: 30px;
+    margin: 40px auto;
+    width: 450px;                 /* Réduit */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 1.2s ease-in-out;
+    border-left: 6px solid var(--vert-bbda);
+}
+
+/* Input + file + textarea */
+.form-card input,
+.form-card textarea,
+.form-card button {
+    width: 85%;                   /* <<< réduction largeur */
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+/* Labels alignés */
+.form-card label {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+  
+  label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: var(--bleu-fonce);
+  }
+  
+  input, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+  }
+  
+  button {
+    background: var(--vert-bbda);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #009624;
+  }
+  
+  .link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: var(--vert-bbda);
+    font-weight: bold;
+  }
+  .logo {
+    display: block;
+    margin: 20px auto 40px;
+    width: 250px;
+    height: auto;
+    animation: fadeIn 1.2s ease-in-out;
+  }
+  
